@@ -1,0 +1,210 @@
+// Colors
+$white: #fff;
+$gray: #ccc;
+$black: #000;
+$primary: #337ab8;
+$background: #ededf0;
+
+// Font
+$fontfamily: 'Merriweather', serif;
+
+// Layout
+@use 'layout/reset';
+
+// Body
+body {
+	color: $black;
+	font-family: $fontfamily;
+	line-height: 1;
+
+	// Reset Margin {
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	// Not Print
+	@media not print {
+		background: $background;
+		padding: 10px;
+	}
+}
+
+// Anchor
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+// Container
+.container {
+	// Not Print
+	@media not print {
+		background: $white;
+		box-shadow: 0 0 10px rgba($black, 25%);
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 816px;
+		min-height: 1056px;
+		padding: 48px;
+		width: 100%;
+	}
+}
+
+// Header
+.header {
+	// Name
+	&__name {
+		color: $primary;
+		font-size: 48px;
+		font-weight: 700;
+	}
+
+	// Position
+	&__position {
+		font-size: 16px;
+		font-weight: 700;
+		margin-top: 8px;
+	}
+
+	// Contact
+	&__contact {
+		display: flex;
+		font-size: 12px;
+		gap: 1.5em;
+		margin-top: 20px;
+
+		// Infocon
+		&__infocon {
+			display: inline-flex;
+
+			// Img
+			> img {
+				align-self: flex-start;
+				background: center no-repeat;
+				background-size: contain;
+				flex: 0 0 auto;
+				height: 1.5em;
+				margin-right: 0.75em;
+				width: 1.5em;
+			}
+
+			// Text
+			> p {
+				align-self: center;
+				flex: 1 1 auto;
+			}
+		}
+	}
+}
+
+// Main
+.main {
+	display: flex;
+	margin-top: 48px;
+
+	// Large
+	&__lg {
+		flex: 1 1 auto;
+		margin-right: 48px;
+	}
+
+	// Small
+	&__sm {
+		flex: 0 0 auto;
+		width: 200px;
+	}
+
+	// Box
+	&__content {
+		// Margin
+		&:not(:first-child) {
+			margin-top: 36px;
+		}
+	}
+}
+
+// Body Block
+.body__block {
+	&:not(:first-child) {
+		margin-top: 36px;
+	}
+}
+
+// Tile Portfolio
+.tile__portfolio {
+	// Body
+	&__body {
+		margin-top: 24px;
+	}
+}
+
+// Typography
+.tp {
+	// Title
+	&__title {
+		color: $primary;
+		font-size: 16px;
+		font-weight: 700;
+	}
+
+	// Subtitle
+	&__subtitle {
+		font-size: 14px;
+		font-weight: 700;
+
+		i {
+			color: rgba($black, 50%);
+			font-weight: 400;
+		}
+	}
+
+	// Headline
+	&__headline {
+		color: rgba($black, 75%);
+		font-size: 10px;
+
+		// Margin
+		&:not(:first-child) {
+			margin-top: 6px;
+		}
+	}
+
+	// Copy
+	&__copy {
+		font-size: 12px;
+		line-height: 1.5;
+
+		// Margin
+		&:not(:first-child) {
+			margin-top: 16px;
+		}
+
+		// Bulleted List
+		ul {
+			display: block;
+			list-style: none;
+
+			> li {
+				display: block;
+				position: relative;
+				padding-left: 16px;
+
+				// Margin
+				&:not(:first-child) {
+					margin-top: 4px;
+				}
+
+				// Icon
+				&::before {
+					content: '•';
+					display: block;
+					font-weight: 700;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+	}
+}
